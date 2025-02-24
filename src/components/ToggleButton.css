@@ -1,0 +1,49 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b2a3a3;
+}
+
+.toggle-container span {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.toggle-container .active {
+  color: #817676; /* Active text turns black */
+}
+
+.toggle-switch {
+  width: 30px; /* Bigger button */
+  height: 10px;
+  background: #f2f1f1; /* Soft grey */
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background 0.3s;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); /* Soft shadow */
+}
+
+.toggle-circle.left {
+  transform: translateX(-4px); /* Left position */
+}
+
+.toggle-circle.right {
+  transform: translateX(14px); /* Right position */
+}

@@ -13,7 +13,6 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  border-radius: 8px;
   margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
@@ -27,9 +26,11 @@
 }
 
 .header-left .logo {
+  font-family: "Roboto", serif;
   letter-spacing: 4px;
   font-size: 24px;
   font-weight: 600;
+  margin-left: 22px;
 }
 
 .header-left > .logo span {
@@ -96,6 +97,7 @@
 }
 
 .centerHero-container {
+  width: 72%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,29 +126,36 @@
 }
 
 .stat-card h2 {
-  font-size: 45px;
-  font-weight: bold;
-  margin-bottom: 4px;
+  font-family: "Roboto", serif;
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 2px;
   margin-top: 4px;
+  color: #3f3f3f;
 }
 
 .stat-card p {
+  margin-top: 8px;
   color: #666;
 }
 
 .stat-card.delayed {
-  background-color: #fff1f1;
+  background-color: #ff768a;
+}
+
+.stat-card.delayed .corner-icon {
+  color: red;
 }
 
 .stat-card.delayed h2,
 .stat-card.delayed p {
-  color: #ff4444;
+  color: white;
 }
 
 /* Charts Container */
 .charts-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.6fr;
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -163,6 +172,23 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  margin-left: 18px;
+}
+
+.chart-header h3 {
+  font-size: 16px;
+  text-align: center;
+  color: grey;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.chart-header p {
+  color: rgb(172, 169, 169);
+  font-weight: 600;
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 2px;
 }
 
 .chart-tabs {
@@ -171,8 +197,13 @@
   color: #666;
 }
 
+.pieSignal {
+  font-size: 12px;
+}
+
 /* Team Section */
 .team-card {
+  width: 250px;
   background: white;
   padding: 16px;
   border-radius: 8px;
@@ -190,18 +221,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.member-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.member-info img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
 }
 
 /* Projects Section */
