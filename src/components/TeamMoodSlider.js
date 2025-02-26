@@ -1,5 +1,5 @@
 // TeamMoodSlider.jsx
-import React, { useState } from "react";
+import React from "react";
 
 import andreaImage from "../Images/Andrea.jpg";
 import alvaroImage from "../Images/Alvaro.webp";
@@ -10,7 +10,7 @@ import mariaImage from "../Images/Maria-image.jpg";
 import "./TeamMoodSlider.css";
 
 const TeamMoodSlider = () => {
-  const [teamMembers, setTeamMembers] = useState([
+  const teamMembers = [
     {
       id: 1,
       name: "Andrea",
@@ -28,7 +28,7 @@ const TeamMoodSlider = () => {
     { id: 3, name: "Juan", img: julanImage, role: "UX Senior", moodValue: 60 },
     { id: 4, name: "Jose", img: joseImage, role: "Marketing", moodValue: 5 },
     { id: 5, name: "Maria", img: mariaImage, role: "UX Junior", moodValue: 50 },
-  ]);
+  ];
 
   // Function to get the appropriate emoji based on mood value
   const getMoodEmoji = (value) => {
