@@ -91,6 +91,10 @@
   border-radius: 50%;
 }
 
+.content-container {
+  margin: 0 auto;
+}
+
 .center-container {
   display: flex;
   justify-content: space-evenly;
@@ -225,10 +229,19 @@
 
 /* Projects Section */
 .projects-header {
+  width: 56%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
+  margin-left: 8px;
+}
+
+.projects-header h2 {
+  font-family: "Roboto" serif;
+  font-size: 28px;
+
+  font-weight: 600;
 }
 
 .action-buttons {
@@ -239,27 +252,32 @@
 .btn {
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #ddd;
+  border: 2px solid var(--color-secondary);
   background: white;
+  color: var(--color-secondary);
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .btn-primary {
-  background: #40e0d0;
+  background: #007e79;
   color: white;
-  border: none;
+}
+
+.budgetBtn-icon {
+  margin-bottom: -2px;
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .project-card {
   background: white;
+  width: 280px;
   padding: 16px;
+  padding-top: 0px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -269,14 +287,19 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  margin-top: 0px;
 }
 
 .project-header h4 {
-  font-weight: bold;
+  font-family: "Roboto", serif;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 4px;
+  margin-top: 14px;
 }
 
 .project-header span {
+  display: flex;
   color: #666;
 }
 
@@ -292,10 +315,30 @@
   gap: 8px;
 }
 
+.budget {
+  display: flex;
+}
+.budget .budget-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-right: 8px;
+}
+
+.budget .budget-num {
+  display: flex;
+  flex-direction: column;
+}
+
 .budget-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   font-size: 14px;
+}
+
+.budget-details .budget-info {
+  display: flex;
+  color: rgb(170, 162, 162);
 }
 
 .progress-bar {
