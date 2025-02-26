@@ -342,24 +342,29 @@
 }
 
 .progress-bar {
-  height: 8px;
+  height: 14px;
   background: #eee;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .progress {
   height: 100%;
-  background: #40e0d0;
-  border-radius: 4px;
+  background: var(--color-secondary);
+  border-radius: 12px;
 }
 
 .hours-row {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 12px;
 }
 
-.hours-left {
-  color: #40e0d0;
+.hours-row .hours-left {
+  color: grey;
+}
+
+.budget-alert {
+  color: red !important;
+  font-weight: 700;
 }

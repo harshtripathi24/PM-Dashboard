@@ -55,6 +55,7 @@ const projectData = [
     totalBudget: 70000,
     profitability: -2500,
     projectHours: 100,
+    projectProgress: 110,
   },
   {
     projectName: "Neo",
@@ -62,6 +63,7 @@ const projectData = [
     totalBudget: 70000,
     profitability: 4000,
     projectHours: 1000,
+    projectProgress: 50,
   },
   {
     projectName: "VR Website",
@@ -69,6 +71,7 @@ const projectData = [
     totalBudget: 70000,
     profitability: 4000,
     projectHours: 2000,
+    projectProgress: 60,
   },
   {
     projectName: "VR Website",
@@ -76,6 +79,7 @@ const projectData = [
     totalBudget: 70000,
     profitability: 4000,
     projectHours: 1100,
+    projectProgress: 100,
   },
 ];
 const renderCustomizedLabel = ({
@@ -103,6 +107,26 @@ const renderCustomizedLabel = ({
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   );
+};
+
+const progressColorFunc = (val) => {
+  if (val > 100) {
+    return "red";
+  } else if (val <= 55) {
+    return "#E69200";
+  } else {
+    return "#007e79";
+  }
+};
+
+const progressbarColorFunc = (val) => {
+  if (val > 100) {
+    return "red";
+  } else if (val <= 55) {
+    return "#FFE7B2";
+  } else {
+    return "#C8E7E3";
+  }
 };
 
 const Dashboard = () => {
@@ -356,15 +380,40 @@ const Dashboard = () => {
                     </div>
                     <div className="budget-num">
                       <span>70,000 €</span>
-                      <span>{project.profitability.toLocaleString()} €</span>
+                      <span
+                        className={`${
+                          project.profitability < 0 ? "budget-alert" : ""
+                        }`}
+                      >
+                        {project.profitability.toLocaleString()} €
+                      </span>
                     </div>
                   </div>
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: "60%" }}></div>
+                  <div
+                    style={{
+                      backgroundColor: `${progressbarColorFunc(
+                        project.projectProgress
+                      )}`,
+                    }}
+                    className="progress-bar"
+                  >
+                    <div
+                      className="progress"
+                      style={{
+                        width: `${project.projectProgress}%`,
+                        backgroundColor: `${progressColorFunc(
+                          project.projectProgress
+                        )}`,
+                      }}
+                    ></div>
                   </div>
                   <div className="hours-row">
-                    <span>Actual hours: 1,100</span>
-                    <span className="hours-left">
+                    <span>Actual hours: 1,100 </span>
+                    <span
+                      className={`hours-left ${
+                        project.profitability < 0 ? "budget-alert" : ""
+                      }`}
+                    >
                       {project.projectHours < 1000
                         ? project.projectHours + " hours over Budget"
                         : project.projectHours + " solid hours"}
